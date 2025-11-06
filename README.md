@@ -1,3 +1,3 @@
-# Repository for the implementation of a medical Retrieval-Augmented Generation (RAG) system
+# Repository for the implementation of medical RAG systems
 
 This repository will be updated soon.
