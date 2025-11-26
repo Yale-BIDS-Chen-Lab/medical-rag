@@ -69,6 +69,7 @@ For the motivation behind rationale-based retrieval and further methodological d
 If this repository is useful for your work, please cite:
 
 ### Primary Project
+
 ```bash
 @article{kim2025rethinking,
   title={Rethinking Retrieval-Augmented Generation for Medicine: A Large-Scale, Systematic Expert Evaluation and Practical Insights},
@@ -78,7 +79,8 @@ If this repository is useful for your work, please cite:
 }
 ```
 
-### MedRAG Toolkit (Foundation of This Repository)
+You may also refer to the MedRAG project, which serves as the foundation of this repository.
+
 ```bash
 @inproceedings{xiong-etal-2024-benchmarking,
     title = "Benchmarking Retrieval-Augmented Generation for Medicine",
