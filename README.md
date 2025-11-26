@@ -20,10 +20,14 @@ conda activate medical-rag
 ```
 
 ### 2. Install PyTorch (CUDA version may vary)
+```bash
 pip install torch==2.9.0 torchvision==0.24.0 torchaudio==2.9.0 --index-url https://download.pytorch.org/whl/cu128
+```
 
 ### 3. Install remaining dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ## ⚡ Quick Start
 
