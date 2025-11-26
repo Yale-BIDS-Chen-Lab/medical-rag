@@ -3,7 +3,7 @@
 This repository implements a lightweight and modular **Retrieval-Augmented Generation (RAG)** pipeline for **medical and clinical tasks**.  
 It is built on top of the [MedRAG toolkit](https://github.com/Teddy-XiongGZ/MedRAG) and adds a small set of practical extensions:
 
-- 🔥 Support for recent dense retrievers (e.g., *Qwen3-embedding*)
+- 🔥 Support for recent dense retrievers (e.g., [*Qwen3-embedding*](https://huggingface.co/collections/Qwen/qwen3-embedding))
 - 🔥 Evidence filtering
 - 🔥 Query reformulation
 
@@ -24,6 +24,41 @@ pip install torch==2.9.0 torchvision==0.24.0 torchaudio==2.9.0 --index-url https
 
 ### 3. Install remaining dependencies
 pip install -r requirements.txt
+
+## ⚡ Quick Start
+
+This repository provides core components for building RAG systems in the medical domain.  
+Each component has a minimal runnable example under the **`examples/`** directory.
+
+### Retrieval
+Retrieves top-k candidate passages from a medical corpus using sparse/dense embeddings  
+(e.g., *BM25*, *MedCPT*, *Qwen3-embedding*, etc.).
+
+- Input: user query  
+- Output: list of retrieved passages (+ scores)
+- Example: `examples/retrieval.py`
+
+### Evidence Filtering
+Removes irrelevant or low-quality passages from the retrieved set. 
+This step is particularly helpful when top-k retrieval includes substantial noise, which is a common issue in clinical and biomedical corpora.
+
+Our implementation uses a fine-tuned evidence-filtering model (based on Llama-3.1-8B-Instruct), trained to judge whether a candidate passage contains supporting evidence for a given medical query.
+The model outputs *“Yes”* (contains evidence) or *“No”* (does not contain evidence).
+Model weights are publicly available on the [Hugging Face repository](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering).
+
+- Input: query-passage pair  
+- Output: Yes or No  
+- Example: `examples/evidence_filtering.py`
+
+### Retrieval with Query Reformulation (Rationale Querying)
+Rewrites the original query into a rationale-style query, which corresponds to the model's intermediate reasoning or justification for the answer.
+Instead of retrieving evidence using the possibly short or ambiguous initial query, the system uses a richer, more informative rationale-based query, often leading to more accurate and semantically aligned retrieval.
+
+- Input: original user query  
+- Output: rationale-style reformulated query  
+- Example: `examples/retrieval_using_rationale_query.py`
+
+For the motivation behind rationale-based retrieval and further methodological details, please refer to [this reference](https://aclanthology.org/2025.naacl-long.635/).
 
 ## 🙌 Citation
 
