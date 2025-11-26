@@ -79,27 +79,6 @@ If this repository is useful for your work, please cite:
 }
 ```
 
-You may also refer to the MedRAG project, which serves as the foundation of this repository.
-
-```bash
-@inproceedings{xiong-etal-2024-benchmarking,
-    title = "Benchmarking Retrieval-Augmented Generation for Medicine",
-    author = "Xiong, Guangzhi  and
-      Jin, Qiao  and
-      Lu, Zhiyong  and
-      Zhang, Aidong",
-    editor = "Ku, Lun-Wei  and
-      Martins, Andre  and
-      Srikumar, Vivek",
-    booktitle = "Findings of the Association for Computational Linguistics ACL 2024",
-    month = aug,
-    year = "2024",
-    address = "Bangkok, Thailand and virtual meeting",
-    publisher = "Association for Computational Linguistics",
-    pages = "6233--6251"
-}
-```
-
 ## 📬 Contact
 
 For questions or suggestions, feel free to open an issue or email us (`hyunjae.kim@yale.edu` or `qingyu.chen@yale.edu`).
