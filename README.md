@@ -12,20 +12,22 @@
   <a href="docs/README.md">📚 Docs</a>
 </p>
 
-Research code and reusable components for retrieval-augmented generation in medicine, including evidence retrieval, evidence filtering, and query reformulation.
+**Retrieval-augmented generation (RAG)** lets an AI look up reference material before answering a medical question. It searches a collection of documents and uses the retrieved passages to help write its response.
+
+Medical RAG provides research code and evaluation data for studying and improving this process.
 
 <p align="center">
-  <img src="assets/overview.svg" alt="Medical RAG capabilities: 1 query reformulation, 2 evidence retrieval, 3 evidence filtering, and 4 expert evaluation data. The query-to-response flow uses retrieval and generation, with optional reformulation and filtering." width="100%">
+  <img src="assets/overview.svg" alt="Three separate RAG workflows. Standard RAG retrieves evidence and generates an answer. Query reformulation adds a step before retrieval, using the prepared search query instead of the original wording. Evidence filtering adds a step after retrieval. The two extensions are shown independently." width="100%">
 </p>
 
 ## Highlights
 
 | Capability | Explore |
 | --- | --- |
-| **① Query reformulation**<br>Rationale-based queries for medical evidence retrieval. | [Guide](docs/query-reformulation.md) · [Example](examples/retrieval_using_rationale_query.py) |
-| **② Evidence retrieval**<br>Sparse, dense, and fusion retrieval with BM25, MedCPT, and Qwen3. | [Guide](docs/retrieval.md) · [Example](examples/quickstart.py) |
-| **③ Evidence filtering**<br>A released Llama-3.1-8B-based query–passage classifier. | [Guide](docs/evidence-filtering.md) · [Model](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering) |
-| **④ Expert evaluation data**<br>Labels for evidence retrieval, selection, factuality, and completeness. | [Dataset](https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200) · [Guide](docs/research/rethinking-med-rag.md#released-evaluation-data) |
+| **Query reformulation**<br>Rationale-based queries for medical evidence retrieval. | [Guide](docs/query-reformulation.md) · [Example](examples/retrieval_using_rationale_query.py) |
+| **Evidence retrieval**<br>Sparse, dense, and fusion retrieval with BM25, MedCPT, and Qwen3. | [Guide](docs/retrieval.md) · [Example](examples/quickstart.py) |
+| **Evidence filtering**<br>A released Llama-3.1-8B-based query–passage classifier. | [Guide](docs/evidence-filtering.md) · [Model](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering) |
+| **Expert evaluation data**<br>Labels for evidence retrieval, selection, factuality, and completeness. | [Dataset](https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200) · [Guide](docs/research/rethinking-med-rag.md#released-evaluation-data) |
 
 ## Research
 
@@ -79,9 +81,9 @@ The dataset and filtering model are available in the [Medical RAG collection on 
 
 ## Documentation
 
-- [Installation](docs/installation.md) — environment, dependencies, and hardware notes
-- [Data and indexing](docs/data-and-indexing.md) — corpus format, embeddings, and local indexes
-- [All guides](docs/README.md) — component examples and research documentation
+- [Installation](docs/installation.md): environment, dependencies, and hardware notes
+- [Data and indexing](docs/data-and-indexing.md): corpus format, embeddings, and local indexes
+- [All guides](docs/README.md): component examples and research documentation
 
 ```text
 medical-rag/
