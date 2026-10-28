@@ -18,7 +18,7 @@ The [model card](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Fil
 
 Use the `passages` subset's `relevant` field: `true` corresponds to `Yes`, and `false` to `No`. A passage is relevant if it fully or partially supports at least one must-have reference statement. Obtain question text from `responses` by joining on `query_id`, using one distinct question row per query so repeated model responses do not duplicate the training pairs.
 
-For training settings and reported precision, recall, and F1, refer to the [current model card](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering#performance). See the [research guide](research/rethinking-rag.md#released-evaluation-data) for the evaluation tables and their row counts.
+For training settings and reported precision, recall, and F1, refer to the [current model card](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering#performance). See the [research guide](research/rethinking-med-rag.md#released-evaluation-data) for the evaluation tables and their row counts.
 
 ## Run the example
 
@@ -38,4 +38,4 @@ Apply the classifier to each retrieved query–passage pair, then pass the retai
 
 A `Yes` label is the model's evidence judgment, not an independent verification of a medical claim. Read the [project disclaimer](../README.md#disclaimer) before using model outputs.
 
-For the study motivation and results, see the [research guide](research/rethinking-rag.md).
+For the study motivation and results, see the [research guide](research/rethinking-med-rag.md).
