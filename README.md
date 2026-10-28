@@ -106,13 +106,7 @@ If you use this work, please cite:
 ```bibtex
 @article{kim2025rethinking,
   title={Rethinking Retrieval-Augmented Generation for Medicine: A Large-Scale, Systematic Expert Evaluation and Practical Insights},
-  author={Kim, Hyunjae and Sohn, Jiwoong and Gilson, Aidan and
-    Cochran-Caggiano, Nicholas and Applebaum, Serina and Jin, Heeju and
-    Park, Seihee and Park, Yujin and Park, Jiyeong and Choi, Seoyoung and
-    Herrera Contreras, Brittany Alexandra and Huang, Thomas and Yun, Jaehoon and
-    Wei, Ethan F. and Jiang, Roy and Colucci, Leah and Lai, Eric and Dave, Amisha and
-    Guo, Tuo and Singer, Maxwell B. and Koo, Yonghoe and Adelman, Ron A. and
-    Zou, James and Taylor, Andrew and Cohan, Arman and Xu, Hua and Chen, Qingyu},
+  author={Kim, Hyunjae and Sohn, Jiwoong and Gilson, Aidan and Cochran-Caggiano, Nicholas and Applebaum, Serina and Jin, Heeju and Park, Seihee and Park, Yujin and Park, Jiyeong and Choi, Seoyoung and others},
   journal={arXiv preprint arXiv:2511.06738},
   year={2025}
 }
