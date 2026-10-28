@@ -1,6 +1,6 @@
 # Rethinking Retrieval-Augmented Generation for Medicine
 
-[Documentation](../README.md) / Research
+[Research](README.md) / Rethinking Medical RAG
 
 **Rethinking Retrieval-Augmented Generation for Medicine: A Large-Scale, Systematic Expert Evaluation and Practical Insights**
 
