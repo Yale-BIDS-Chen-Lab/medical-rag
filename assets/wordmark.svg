@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="150" viewBox="0 0 760 150" role="img" aria-labelledby="title desc">
+  <title id="title">Medical RAG</title>
+  <desc id="desc">Medical RAG wordmark with three evidence cards in navy and teal.</desc>
+  <rect width="760" height="150" rx="20" fill="#ffffff"/>
+  <g transform="translate(37 32)">
+    <rect x="0" y="0" width="57" height="69" rx="10" fill="#e0f2ef" stroke="#0f766e" stroke-width="2"/>
+    <rect x="14" y="9" width="57" height="69" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="2"/>
+    <rect x="28" y="18" width="57" height="69" rx="10" fill="#0f766e"/>
+    <path d="M43 40h27M43 51h27M43 62h17" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+  <text x="150" y="99" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="-2" fill="#12283f">Medical <tspan fill="#0f766e">RAG</tspan></text>
+</svg>
