@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/wordmark.svg" alt="Medical RAG" width="460">
+  <img src="assets/wordmark.svg" alt="Medical RAG" width="440">
 </p>
 
 <p align="center"><strong>Tools for evidence-grounded medical AI</strong></p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2511.06738">📄 Paper</a> &nbsp;·&nbsp;
+  <a href="#research">📄 Research</a> &nbsp;·&nbsp;
   <a href="https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200">📊 Dataset</a> &nbsp;·&nbsp;
   <a href="https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering">🤗 Model</a> &nbsp;·&nbsp;
   <a href="#quick-start">⚡ Quick Start</a> &nbsp;·&nbsp;
@@ -15,25 +15,25 @@
 Research code and reusable components for retrieval-augmented generation in medicine, including evidence retrieval, evidence filtering, and query reformulation.
 
 <p align="center">
-  <img src="assets/overview.svg" alt="Conceptual workflow: a medical query, optionally reformulated, retrieves corpus passages; optional evidence filtering selects passages for response generation." width="100%">
+  <img src="assets/overview.svg" alt="Medical RAG capabilities: 1 query reformulation, 2 evidence retrieval, 3 evidence filtering, and 4 expert evaluation data. The query-to-response flow uses retrieval and generation, with optional reformulation and filtering." width="100%">
 </p>
-
-*RAG components. Query reformulation and evidence filtering are optional; the examples below demonstrate individual components.*
 
 ## Highlights
 
-- **Flexible retrieval.** Sparse, dense, and reciprocal rank fusion retrieval over medical corpora, with support for BM25, MedCPT, and Qwen3 embeddings.
-- **Evidence filtering.** A released Llama-3.1-8B-based model that labels whether a passage contains supporting evidence for a query.
-- **Query reformulation.** Rationale-based queries for exploring how query formulation affects evidence retrieval.
-- **Expert evaluation data.** Released questions, model responses, retrieved passages, and annotations for evaluating evidence retrieval, evidence selection, factuality, and completeness.
+| Capability | Explore |
+| --- | --- |
+| **① Query reformulation**<br>Rationale-based queries for medical evidence retrieval. | [Guide](docs/query-reformulation.md) · [Example](examples/retrieval_using_rationale_query.py) |
+| **② Evidence retrieval**<br>Sparse, dense, and fusion retrieval with BM25, MedCPT, and Qwen3. | [Guide](docs/retrieval.md) · [Example](examples/quickstart.py) |
+| **③ Evidence filtering**<br>A released Llama-3.1-8B-based query–passage classifier. | [Guide](docs/evidence-filtering.md) · [Model](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering) |
+| **④ Expert evaluation data**<br>Labels for evidence retrieval, selection, factuality, and completeness. | [Dataset](https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200) · [Guide](docs/research/rethinking-med-rag.md#released-evaluation-data) |
 
 ## Research
 
-**[Rethinking Retrieval-Augmented Generation for Medicine: A Large-Scale, Systematic Expert Evaluation and Practical Insights](https://arxiv.org/abs/2511.06738)**
+| Study | Resources |
+| --- | --- |
+| **[Rethinking Medical RAG](docs/research/rethinking-med-rag.md)**<br>Expert evaluation of evidence retrieval, selection, and response quality.<br>**200 questions · 800 responses · 3,200 passages** | [📄 Paper](https://arxiv.org/abs/2511.06738)<br>[📊 Dataset](https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200) · [🤗 Model](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering) |
 
-The study examines evidence retrieval, evidence selection, and response generation, and investigates evidence filtering and query reformulation as practical improvements. The released [expert evaluation dataset](https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200) covers **200 questions and 800 responses** from GPT-4o and Llama-3.1-8B, with and without RAG, together with **3,200 retrieved passages** and stage-specific evaluation labels.
-
-[Read the paper](https://arxiv.org/abs/2511.06738) · [Dataset card](https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200) · [Research guide and code map](docs/research/rethinking-rag.md)
+[Research guides and code maps →](docs/research/README.md)
 
 ## Quick Start
 
@@ -76,19 +76,12 @@ The dataset and filtering model are available in the [Medical RAG collection on 
 | --- | --- | --- |
 | Expert evaluation dataset | Questions, responses, retrieved passages, and evaluation labels | [Hugging Face](https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200) |
 | Evidence filtering model | Llama-3.1-8B-based query–passage evidence classifier | [Hugging Face](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering) |
-| Single-query retrieval | Retrieve a few passages for one question | [Example](examples/quickstart.py) |
-| Dataset retrieval | Retrieve passages for the MedQA test set | [Example](examples/retrieval.py) |
-| Evidence filtering | Classify one query–passage pair | [Example](examples/evidence_filtering.py) |
-| Rationale querying | Generate rationale-style queries, then retrieve passages | [Example](examples/retrieval_using_rationale_query.py) |
 
 ## Documentation
 
 - [Installation](docs/installation.md) — environment, dependencies, and hardware notes
-- [Retrieval](docs/retrieval.md) — retrievers, corpora, and Python usage
-- [Evidence filtering](docs/evidence-filtering.md) — model, input, and output
-- [Query reformulation](docs/query-reformulation.md) — rationale querying workflow
 - [Data and indexing](docs/data-and-indexing.md) — corpus format, embeddings, and local indexes
-- [Research guide](docs/research/rethinking-rag.md) — study overview and implementation scope
+- [All guides](docs/README.md) — component examples and research documentation
 
 ```text
 medical-rag/
@@ -114,7 +107,7 @@ If you use this work, please cite:
 
 ## Acknowledgements
 
-This repository builds on the [MedRAG toolkit](https://github.com/Teddy-XiongGZ/MedRAG). We thank its authors and the developers of the models, datasets, and libraries used in this project.
+The initial RAG implementation was adapted from the [MedRAG toolkit](https://github.com/Teddy-XiongGZ/MedRAG). We thank its authors and the developers of the models, datasets, and libraries used in this project.
 
 ## Disclaimer
 
