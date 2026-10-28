@@ -12,6 +12,14 @@ The evidence filtering model classifies whether a retrieved passage contains sup
 | Output | `Yes` or `No` |
 | Example | [`examples/evidence_filtering.py`](../examples/evidence_filtering.py) |
 
+## Training data and evaluation
+
+The [model card](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering#training-setup) describes training on **3,200 query–passage pairs** with expert-derived binary relevance labels and evaluation using **five-fold cross-validation**. The underlying data is available in [Medical RAG Expert Evaluation (200 queries)](https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200), included alongside the model in the [Medical RAG collection](https://huggingface.co/collections/Yale-BIDS-Chen/medical-rag).
+
+Use the `passages` subset's `relevant` field: `true` corresponds to `Yes`, and `false` to `No`. A passage is relevant if it fully or partially supports at least one must-have reference statement. Obtain question text from `responses` by joining on `query_id`, using one distinct question row per query so repeated model responses do not duplicate the training pairs.
+
+For training settings and reported precision, recall, and F1, refer to the [current model card](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering#performance). See the [research guide](research/rethinking-rag.md#released-evaluation-data) for the evaluation tables and their row counts.
+
 ## Run the example
 
 After [installation](installation.md), run from the repository root:
