@@ -41,4 +41,4 @@ Generated rationales may contain errors; treat them as experimental retrieval in
 - [Rethinking Retrieval-Augmented Generation for Medicine](https://arxiv.org/abs/2511.06738)
 - [Rationale-Guided Retrieval Augmented Generation for Medical Question Answering](https://aclanthology.org/2025.naacl-long.635/)
 
-[Retrieval](retrieval.md) · [Research guide](research/rethinking-rag.md)
+[Retrieval](retrieval.md) · [Research guide](research/rethinking-med-rag.md)
