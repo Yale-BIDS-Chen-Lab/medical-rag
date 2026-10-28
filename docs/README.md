@@ -14,6 +14,8 @@ Medical RAG provides reusable components for medical evidence retrieval and RAG 
 
 Research guides describe study-specific methods and map them to the available code.
 
-- [Rethinking Retrieval-Augmented Generation for Medicine](research/rethinking-rag.md)
+- [Rethinking Medical RAG](research/rethinking-med-rag.md) — expert evaluation data, methods, and code map
+
+[Browse research guides](research/README.md)
 
 [Back to the project](../README.md) · [Disclaimer](../README.md#disclaimer)
