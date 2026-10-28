@@ -5,34 +5,35 @@
 <p align="center"><strong>Tools for evidence-grounded medical AI</strong></p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2511.06738">Paper</a> &nbsp;·&nbsp;
-  <a href="https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering">Evidence Filtering Model</a> &nbsp;·&nbsp;
-  <a href="#quick-start">Quick Start</a> &nbsp;·&nbsp;
-  <a href="docs/README.md">Documentation</a>
+  <a href="https://arxiv.org/abs/2511.06738">📄 Paper</a> &nbsp;·&nbsp;
+  <a href="https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200">📊 Dataset</a> &nbsp;·&nbsp;
+  <a href="https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering">🤗 Model</a> &nbsp;·&nbsp;
+  <a href="#quick-start">⚡ Quick Start</a> &nbsp;·&nbsp;
+  <a href="docs/README.md">📚 Docs</a>
 </p>
 
-Research code and reusable components for retrieval-augmented generation in medicine, including evidence retrieval, evidence filtering, and query reformulation. Built on [MedRAG](https://github.com/Teddy-XiongGZ/MedRAG).
+Research code and reusable components for retrieval-augmented generation in medicine, including evidence retrieval, evidence filtering, and query reformulation.
 
 <p align="center">
   <img src="assets/overview.svg" alt="Conceptual workflow: a medical query, optionally reformulated, retrieves corpus passages; optional evidence filtering selects passages for response generation." width="100%">
 </p>
 
-*Conceptual workflow. Query reformulation and evidence filtering are optional; the examples below demonstrate individual components.*
+*RAG components. Query reformulation and evidence filtering are optional; the examples below demonstrate individual components.*
 
 ## Highlights
 
 - **Flexible retrieval.** Sparse, dense, and reciprocal rank fusion retrieval over medical corpora, with support for BM25, MedCPT, and Qwen3 embeddings.
 - **Evidence filtering.** A released Llama-3.1-8B-based model that labels whether a passage contains supporting evidence for a query.
 - **Query reformulation.** Rationale-based queries for exploring how query formulation affects evidence retrieval.
+- **Expert evaluation data.** Released questions, model responses, retrieved passages, and annotations for evaluating evidence retrieval, evidence selection, factuality, and completeness.
 
 ## Research
 
-**[Rethinking Retrieval-Augmented Generation for Medicine: A Large-Scale, Systematic Expert Evaluation and Practical Insights](https://arxiv.org/abs/2511.06738)**  
-Hyunjae Kim, Jiwoong Sohn, Aidan Gilson, et al. · 2025
+**[Rethinking Retrieval-Augmented Generation for Medicine: A Large-Scale, Systematic Expert Evaluation and Practical Insights](https://arxiv.org/abs/2511.06738)**
 
-The study examines evidence retrieval, evidence selection, and response generation using **80,502 annotations from 18 medical experts**. It identifies retrieval and evidence selection as key failure points and studies evidence filtering and query reformulation as practical improvements.
+The study examines evidence retrieval, evidence selection, and response generation, and investigates evidence filtering and query reformulation as practical improvements. The released [expert evaluation dataset](https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200) covers **200 questions and 800 responses** from GPT-4o and Llama-3.1-8B, with and without RAG, together with **3,200 retrieved passages** and stage-specific evaluation labels.
 
-[Read the paper](https://arxiv.org/abs/2511.06738) · [Research guide and code map](docs/research/rethinking-rag.md)
+[Read the paper](https://arxiv.org/abs/2511.06738) · [Dataset card](https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200) · [Research guide and code map](docs/research/rethinking-rag.md)
 
 ## Quick Start
 
@@ -69,8 +70,11 @@ For the available options, run `python examples/quickstart.py --help` or see the
 
 ## Resources
 
+The dataset and filtering model are available in the [Medical RAG collection on Hugging Face](https://huggingface.co/collections/Yale-BIDS-Chen/medical-rag).
+
 | Resource | Description | Link |
 | --- | --- | --- |
+| Expert evaluation dataset | Questions, responses, retrieved passages, and evaluation labels | [Hugging Face](https://huggingface.co/datasets/Yale-BIDS-Chen/medical-rag-expert-evaluation-200) |
 | Evidence filtering model | Llama-3.1-8B-based query–passage evidence classifier | [Hugging Face](https://huggingface.co/Yale-BIDS-Chen/Llama-3.1-8B-Evidence-Filtering) |
 | Single-query retrieval | Retrieve a few passages for one question | [Example](examples/quickstart.py) |
 | Dataset retrieval | Retrieve passages for the MedQA test set | [Example](examples/retrieval.py) |
@@ -102,7 +106,13 @@ If you use this work, please cite:
 ```bibtex
 @article{kim2025rethinking,
   title={Rethinking Retrieval-Augmented Generation for Medicine: A Large-Scale, Systematic Expert Evaluation and Practical Insights},
-  author={Kim, Hyunjae and Sohn, Jiwoong and Gilson, Aidan and Cochran-Caggiano, Nicholas and Applebaum, Serina and Jin, Heeju and Park, Seihee and Park, Yujin and Park, Jiyeong and Choi, Seoyoung and others},
+  author={Kim, Hyunjae and Sohn, Jiwoong and Gilson, Aidan and
+    Cochran-Caggiano, Nicholas and Applebaum, Serina and Jin, Heeju and
+    Park, Seihee and Park, Yujin and Park, Jiyeong and Choi, Seoyoung and
+    Herrera Contreras, Brittany Alexandra and Huang, Thomas and Yun, Jaehoon and
+    Wei, Ethan F. and Jiang, Roy and Colucci, Leah and Lai, Eric and Dave, Amisha and
+    Guo, Tuo and Singer, Maxwell B. and Koo, Yonghoe and Adelman, Ron A. and
+    Zou, James and Taylor, Andrew and Cohan, Arman and Xu, Hua and Chen, Qingyu},
   journal={arXiv preprint arXiv:2511.06738},
   year={2025}
 }
