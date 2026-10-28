@@ -57,4 +57,4 @@ The current implementation reuses indexes by file path and does not automaticall
 
 For reproducible experiments, record the corpus snapshot, chunking settings, encoder revision, and index settings alongside the experiment. New corpus names also need an entry in `corpus_names` in `src/utils.py`; adding a data directory alone does not register a new corpus.
 
-[Retrieval guide](retrieval.md) · [Research guide](research/rethinking-rag.md)
+[Retrieval guide](retrieval.md) · [Research guide](research/rethinking-med-rag.md)
