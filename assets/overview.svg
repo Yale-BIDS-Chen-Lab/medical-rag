@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="455" viewBox="0 0 1100 455" role="img" aria-labelledby="title desc">
+  <title id="title">Standard RAG and two independent extensions</title>
+  <desc id="desc">The first row shows a question followed by evidence retrieval, answer generation, and an answer. The second row adds query reformulation before retrieval, so only the prepared search query enters the retriever. The third row adds evidence filtering after retrieval. Each row is a separate workflow. A document collection and magnifying glass represent the corpus and its search index.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L7 4L1 7" fill="none" stroke="#718795" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <g id="document-search" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 1H24L30 7V33H5Z" fill="#ffffff" stroke="#7896a4" stroke-width="1.4"/>
+      <path d="M1 6H21L26 11V37H1Z" fill="#e5eff2" stroke="#7896a4" stroke-width="1.4"/>
+      <path d="M7 14H18M7 20H18M7 26H14" stroke="#7896a4" stroke-width="1.4"/>
+      <circle cx="27" cy="28" r="7" fill="#ffffff" stroke="#397d74" stroke-width="2"/>
+      <path d="M32 33L38 39" stroke="#397d74" stroke-width="2.5"/>
+    </g>
+    <g id="retrieve">
+      <rect width="195" height="70" rx="7" fill="#f0f5f8" stroke="#c3d3dc" stroke-width="1.2"/>
+      <use href="#document-search" x="13" y="14"/>
+      <text x="65" y="30" font-size="22">Retrieve</text>
+      <text x="65" y="51" font-size="13.5" fill="#637b89">Medical documents</text>
+    </g>
+    <g id="generate">
+      <rect width="195" height="70" rx="7" fill="#f7f9fa" stroke="#cbd5db" stroke-width="1.2"/>
+      <text x="97.5" y="30" text-anchor="middle" font-size="22">Generate</text>
+      <text x="97.5" y="51" text-anchor="middle" font-size="14" fill="#637b89">Write an answer</text>
+    </g>
+  </defs>
+  <rect width="1100" height="455" fill="#ffffff"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#173547">
+    <text x="24" y="29" font-size="20" font-weight="600">Standard RAG</text>
+    <text x="28" y="99" font-size="21">Question</text>
+    <use href="#retrieve" x="170" y="57"/>
+    <use href="#generate" x="750" y="57"/>
+    <text x="1008" y="99" font-size="21">Answer</text>
+    <text x="557" y="78" text-anchor="middle" font-size="15" fill="#637b89">Retrieved passages</text>
+    <g fill="none" stroke="#718795" stroke-width="1.5" marker-end="url(#arrow)">
+      <path d="M124 92H157"/><path d="M378 92H737"/><path d="M958 92H995"/>
+    </g>
+
+    <path d="M24 151H1076" stroke="#e3ebef" stroke-width="1"/>
+    <text x="24" y="180" font-size="20" font-weight="600" fill="#28796d">+ Query reformulation</text>
+    <text x="28" y="250" font-size="21">Question</text>
+    <rect x="170" y="208" width="195" height="70" rx="7" fill="#eaf5f0" stroke="#99c6b6" stroke-width="1.4"/>
+    <text x="267.5" y="238" text-anchor="middle" font-size="22">Reformulate</text>
+    <text x="267.5" y="259" text-anchor="middle" font-size="14" fill="#477d70">Prepare a search query</text>
+    <use href="#retrieve" x="460" y="208"/>
+    <use href="#generate" x="750" y="208"/>
+    <text x="1008" y="250" font-size="21">Answer</text>
+    <g fill="none" stroke="#718795" stroke-width="1.5" marker-end="url(#arrow)">
+      <path d="M124 243H157"/><path d="M378 243H447"/><path d="M668 243H737"/><path d="M958 243H995"/>
+    </g>
+
+    <path d="M24 302H1076" stroke="#e3ebef" stroke-width="1"/>
+    <text x="24" y="331" font-size="20" font-weight="600" fill="#28796d">+ Evidence filtering</text>
+    <text x="28" y="401" font-size="21">Question</text>
+    <use href="#retrieve" x="170" y="359"/>
+    <rect x="460" y="359" width="195" height="70" rx="7" fill="#eaf5f0" stroke="#99c6b6" stroke-width="1.4"/>
+    <text x="557.5" y="389" text-anchor="middle" font-size="22">Filter</text>
+    <text x="557.5" y="410" text-anchor="middle" font-size="14" fill="#477d70">Keep relevant passages</text>
+    <use href="#generate" x="750" y="359"/>
+    <text x="1008" y="401" font-size="21">Answer</text>
+    <g fill="none" stroke="#718795" stroke-width="1.5" marker-end="url(#arrow)">
+      <path d="M124 394H157"/><path d="M378 394H447"/><path d="M668 394H737"/><path d="M958 394H995"/>
+    </g>
+  </g>
+</svg>
